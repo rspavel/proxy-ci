@@ -7,53 +7,53 @@ services:
 
 env:
   matrix:
-  - APP=amg DOCKERFILE=Dockerfile.ubuntu
-  - APP=candle-benchmarks DEPS="python" DOCKERFILE=Dockerfile.ubuntu
-  - APP=examinimd DOCKERFILE=Dockerfile.ubuntu
-  - APP=laghos DOCKERFILE=Dockerfile.ubuntu
-  - APP=macsio DOCKERFILE=Dockerfile.ubuntu
-  - APP=miniamr DOCKERFILE=Dockerfile.ubuntu
-  - APP=minife DOCKERFILE=Dockerfile.ubuntu
-  - APP=minitri DOCKERFILE=Dockerfile.ubuntu
-  - APP=nekbone DOCKERFILE=Dockerfile.ubuntu
-  - APP=sw4lite DOCKERFILE=Dockerfile.ubuntu
-  - APP=swfft DOCKERFILE=Dockerfile.ubuntu
-  - APP=xsbench DOCKERFILE=Dockerfile.ubuntu
-  - APP=amg2013 DOCKERFILE=Dockerfile.ubuntu
-  - APP=aspa DOCKERFILE=Dockerfile.ubuntu
-  - APP=branson DOCKERFILE=Dockerfile.ubuntu
-  - APP=clamr DOCKERFILE=Dockerfile.ubuntu
-  - APP=cloverleaf DOCKERFILE=Dockerfile.ubuntu
-  - APP=cloverleaf3d DOCKERFILE=Dockerfile.ubuntu
-  - APP=coevp DOCKERFILE=Dockerfile.ubuntu
-  - APP=cohmm DOCKERFILE=Dockerfile.ubuntu
-  - APP=comd DOCKERFILE=Dockerfile.ubuntu
-  - APP=cosp2 DOCKERFILE=Dockerfile.ubuntu
-  - APP=ebms DOCKERFILE=Dockerfile.ubuntu
-  - APP=exampm DOCKERFILE=Dockerfile.ubuntu
-  - APP=exasp2 DOCKERFILE=Dockerfile.ubuntu
-  - APP=hacckernels DOCKERFILE=Dockerfile.ubuntu
-  - APP=hpccg DOCKERFILE=Dockerfile.ubuntu
-  - APP=hpgmg DOCKERFILE=Dockerfile.ubuntu
-  - APP=kripke DOCKERFILE=Dockerfile.ubuntu
-  - APP=lcals DOCKERFILE=Dockerfile.ubuntu
-  - APP=lulesh DOCKERFILE=Dockerfile.ubuntu
-  - APP=miniaero DOCKERFILE=Dockerfile.ubuntu
-  - APP=miniamr DOCKERFILE=Dockerfile.ubuntu
-  - APP=minighost DOCKERFILE=Dockerfile.ubuntu
-  - APP=minimd DOCKERFILE=Dockerfile.ubuntu
-  - APP=miniqmc DOCKERFILE=Dockerfile.ubuntu
-  - APP=minismac2d DOCKERFILE=Dockerfile.ubuntu
-  - APP=minixyce DOCKERFILE=Dockerfile.ubuntu
-  - APP=nut DOCKERFILE=Dockerfile.ubuntu
-  - APP=openmc DOCKERFILE=Dockerfile.ubuntu
-  - APP=pathfinder DOCKERFILE=Dockerfile.ubuntu
-  - APP=pennant DOCKERFILE=Dockerfile.ubuntu
-  - APP=rsbench DOCKERFILE=Dockerfile.ubuntu
-  - APP=simplemoc DOCKERFILE=Dockerfile.ubuntu
-  - APP=snap DOCKERFILE=Dockerfile.ubuntu
-  - APP=snbone DOCKERFILE=Dockerfile.ubuntu
-  - APP=tealeaf DOCKERFILE=Dockerfile.ubuntu
+  - APP=amg DOCKEROS=ubuntu
+  - APP=candle-benchmarks DEPS="python" DOCKEROS=ubuntu
+  - APP=examinimd DOCKEROS=ubuntu
+  - APP=laghos DOCKEROS=ubuntu
+  - APP=macsio DOCKEROS=ubuntu
+  - APP=miniamr DOCKEROS=ubuntu
+  - APP=minife DOCKEROS=ubuntu
+  - APP=minitri DOCKEROS=ubuntu
+  - APP=nekbone DOCKEROS=ubuntu
+  - APP=sw4lite DOCKEROS=ubuntu
+  - APP=swfft DOCKEROS=ubuntu
+  - APP=xsbench DOCKEROS=ubuntu
+  - APP=amg2013 DOCKEROS=ubuntu
+  - APP=aspa DOCKEROS=ubuntu
+  - APP=branson DOCKEROS=ubuntu
+  - APP=clamr DOCKEROS=ubuntu
+  - APP=cloverleaf DOCKEROS=ubuntu
+  - APP=cloverleaf3d DOCKEROS=ubuntu
+  - APP=coevp DOCKEROS=ubuntu
+  - APP=cohmm DOCKEROS=ubuntu
+  - APP=comd DOCKEROS=ubuntu
+  - APP=cosp2 DOCKEROS=ubuntu
+  - APP=ebms DOCKEROS=ubuntu
+  - APP=exampm DOCKEROS=ubuntu
+  - APP=exasp2 DOCKEROS=ubuntu
+  - APP=hacckernels DOCKEROS=ubuntu
+  - APP=hpccg DOCKEROS=ubuntu
+  - APP=hpgmg DOCKEROS=ubuntu
+  - APP=kripke DOCKEROS=ubuntu
+  - APP=lcals DOCKEROS=ubuntu
+  - APP=lulesh DOCKEROS=ubuntu
+  - APP=miniaero DOCKEROS=ubuntu
+  - APP=miniamr DOCKEROS=ubuntu
+  - APP=minighost DOCKEROS=ubuntu
+  - APP=minimd DOCKEROS=ubuntu
+  - APP=miniqmc DOCKEROS=ubuntu
+  - APP=minismac2d DOCKEROS=ubuntu
+  - APP=minixyce DOCKEROS=ubuntu
+  - APP=nut DOCKEROS=ubuntu
+  - APP=openmc DOCKEROS=ubuntu
+  - APP=pathfinder DOCKEROS=ubuntu
+  - APP=pennant DOCKEROS=ubuntu
+  - APP=rsbench DOCKEROS=ubuntu
+  - APP=simplemoc DOCKEROS=ubuntu
+  - APP=snap DOCKEROS=ubuntu
+  - APP=snbone DOCKEROS=ubuntu
+  - APP=tealeaf DOCKEROS=ubuntu
 
 before_install:
   - cp -vr docker ${HOME}/docker
@@ -72,7 +72,7 @@ before_install:
 script:
 - docker build 
     --build-arg APP="${APP}" --build-arg DEPS="${DEPS}" --build-arg INSECURE="${INSECURE}"
-    -t ${TRAVIS_REPO_SLUG}:${APP} ${HOME}/docker/ --file="${HOME}/docker/${DOCKERFILE}" &&
+    -t ${TRAVIS_REPO_SLUG}:${APP} ${HOME}/docker/ --file="${HOME}/docker/Dockerfile.${DOCKEROS}" &&
   rm -rf ${HOME}/.ccache &&
   CON=$(docker run -d ${TRAVIS_REPO_SLUG}:${APP} /bin/bash) &&
   docker cp ${CON}:/home/ci/.ccache ${HOME}/
@@ -81,7 +81,7 @@ after_success:
 - if [[ ${TRAVIS_BRANCH} = master ]]; then DEPLOY=yes; fi
 - if [[ ${DEPLOY} = yes && ${DOCKER_USERNAME} && ${DOCKER_PASSWORD} && ${TRAVIS_PULL_REQUEST} == false ]]; then
     docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
-    docker push "${TRAVIS_REPO_SLUG}:${APP}";
+    docker push "${TRAVIS_REPO_SLUG}:${DOCKEROS}:${APP}";
   fi
 
 cache:
