@@ -7,55 +7,53 @@ services:
 
 env:
   matrix:
-  - DOCKERFILE=Dockerfile.ubuntu
-  - DOCKERFILE=Dockerfile.fedora
-  - APP=amg
-  - APP=candle-benchmarks DEPS="python"
-  - APP=examinimd
-  - APP=laghos
-  - APP=macsio
-  - APP=miniamr
-  - APP=minife
-  - APP=minitri
-  - APP=nekbone
-  - APP=sw4lite
-  - APP=swfft
-  - APP=xsbench
-  - APP=amg2013
-  - APP=aspa
-  - APP=branson
-  - APP=clamr
-  - APP=cloverleaf
-  - APP=cloverleaf3d
-  - APP=coevp
-  - APP=cohmm
-  - APP=comd
-  - APP=cosp2
-  - APP=ebms
-  - APP=exampm
-  - APP=exasp2
-  - APP=hacckernels
-  - APP=hpccg
-  - APP=hpgmg
-  - APP=kripke
-  - APP=lcals
-  - APP=lulesh
-  - APP=miniaero
-  - APP=miniamr
-  - APP=minighost
-  - APP=minimd
-  - APP=miniqmc
-  - APP=minismac2d
-  - APP=minixyce
-  - APP=nut
-  - APP=openmc
-  - APP=pathfinder
-  - APP=pennant
-  - APP=rsbench
-  - APP=simplemoc
-  - APP=snap
-  - APP=snbone
-  - APP=tealeaf
+  - APP=amg DOCKERFILE=Dockerfile.ubuntu
+  - APP=candle-benchmarks DEPS="python" DOCKERFILE=Dockerfile.ubuntu
+  - APP=examinimd DOCKERFILE=Dockerfile.ubuntu
+  - APP=laghos DOCKERFILE=Dockerfile.ubuntu
+  - APP=macsio DOCKERFILE=Dockerfile.ubuntu
+  - APP=miniamr DOCKERFILE=Dockerfile.ubuntu
+  - APP=minife DOCKERFILE=Dockerfile.ubuntu
+  - APP=minitri DOCKERFILE=Dockerfile.ubuntu
+  - APP=nekbone DOCKERFILE=Dockerfile.ubuntu
+  - APP=sw4lite DOCKERFILE=Dockerfile.ubuntu
+  - APP=swfft DOCKERFILE=Dockerfile.ubuntu
+  - APP=xsbench DOCKERFILE=Dockerfile.ubuntu
+  - APP=amg2013 DOCKERFILE=Dockerfile.ubuntu
+  - APP=aspa DOCKERFILE=Dockerfile.ubuntu
+  - APP=branson DOCKERFILE=Dockerfile.ubuntu
+  - APP=clamr DOCKERFILE=Dockerfile.ubuntu
+  - APP=cloverleaf DOCKERFILE=Dockerfile.ubuntu
+  - APP=cloverleaf3d DOCKERFILE=Dockerfile.ubuntu
+  - APP=coevp DOCKERFILE=Dockerfile.ubuntu
+  - APP=cohmm DOCKERFILE=Dockerfile.ubuntu
+  - APP=comd DOCKERFILE=Dockerfile.ubuntu
+  - APP=cosp2 DOCKERFILE=Dockerfile.ubuntu
+  - APP=ebms DOCKERFILE=Dockerfile.ubuntu
+  - APP=exampm DOCKERFILE=Dockerfile.ubuntu
+  - APP=exasp2 DOCKERFILE=Dockerfile.ubuntu
+  - APP=hacckernels DOCKERFILE=Dockerfile.ubuntu
+  - APP=hpccg DOCKERFILE=Dockerfile.ubuntu
+  - APP=hpgmg DOCKERFILE=Dockerfile.ubuntu
+  - APP=kripke DOCKERFILE=Dockerfile.ubuntu
+  - APP=lcals DOCKERFILE=Dockerfile.ubuntu
+  - APP=lulesh DOCKERFILE=Dockerfile.ubuntu
+  - APP=miniaero DOCKERFILE=Dockerfile.ubuntu
+  - APP=miniamr DOCKERFILE=Dockerfile.ubuntu
+  - APP=minighost DOCKERFILE=Dockerfile.ubuntu
+  - APP=minimd DOCKERFILE=Dockerfile.ubuntu
+  - APP=miniqmc DOCKERFILE=Dockerfile.ubuntu
+  - APP=minismac2d DOCKERFILE=Dockerfile.ubuntu
+  - APP=minixyce DOCKERFILE=Dockerfile.ubuntu
+  - APP=nut DOCKERFILE=Dockerfile.ubuntu
+  - APP=openmc DOCKERFILE=Dockerfile.ubuntu
+  - APP=pathfinder DOCKERFILE=Dockerfile.ubuntu
+  - APP=pennant DOCKERFILE=Dockerfile.ubuntu
+  - APP=rsbench DOCKERFILE=Dockerfile.ubuntu
+  - APP=simplemoc DOCKERFILE=Dockerfile.ubuntu
+  - APP=snap DOCKERFILE=Dockerfile.ubuntu
+  - APP=snbone DOCKERFILE=Dockerfile.ubuntu
+  - APP=tealeaf DOCKERFILE=Dockerfile.ubuntu
 
 before_install:
   - cp -vr docker ${HOME}/docker
