@@ -54,7 +54,7 @@ env:
   - APP=snap DOCKEROS=ubuntu
   - APP=snbone DOCKEROS=ubuntu
   - APP=tealeaf DOCKEROS=ubuntu
-    - APP=amg DOCKEROS=fedora
+  - APP=amg DOCKEROS=fedora
   - APP=candle-benchmarks DEPS="python" DOCKEROS=fedora
   - APP=examinimd DOCKEROS=fedora
   - APP=laghos DOCKEROS=fedora
