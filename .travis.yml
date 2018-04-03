@@ -7,6 +7,53 @@ services:
 
 env:
   matrix:
+  - APP=amg DOCKEROS=ubuntu
+  - APP=candle-benchmarks DEPS="python" DOCKEROS=ubuntu
+  - APP=examinimd DOCKEROS=ubuntu
+  - APP=laghos DOCKEROS=ubuntu
+  - APP=macsio DOCKEROS=ubuntu
+  - APP=miniamr DOCKEROS=ubuntu
+  - APP=minife DOCKEROS=ubuntu
+  - APP=minitri DOCKEROS=ubuntu
+  - APP=nekbone DOCKEROS=ubuntu
+  - APP=sw4lite DOCKEROS=ubuntu
+  - APP=swfft DOCKEROS=ubuntu
+  - APP=xsbench DOCKEROS=ubuntu
+  - APP=amg2013 DOCKEROS=ubuntu
+  - APP=aspa DOCKEROS=ubuntu
+  - APP=branson DOCKEROS=ubuntu
+  - APP=clamr DOCKEROS=ubuntu
+  - APP=cloverleaf DOCKEROS=ubuntu
+  - APP=cloverleaf3d DOCKEROS=ubuntu
+  - APP=coevp DOCKEROS=ubuntu
+  - APP=cohmm DOCKEROS=ubuntu
+  - APP=comd DOCKEROS=ubuntu
+  - APP=cosp2 DOCKEROS=ubuntu
+  - APP=ebms DOCKEROS=ubuntu
+  - APP=exampm DOCKEROS=ubuntu
+  - APP=exasp2 DOCKEROS=ubuntu
+  - APP=hacckernels DOCKEROS=ubuntu
+  - APP=hpccg DOCKEROS=ubuntu
+  - APP=hpgmg DOCKEROS=ubuntu
+  - APP=kripke DOCKEROS=ubuntu
+  - APP=lcals DOCKEROS=ubuntu
+  - APP=lulesh DOCKEROS=ubuntu
+  - APP=miniaero DOCKEROS=ubuntu
+  - APP=miniamr DOCKEROS=ubuntu
+  - APP=minighost DOCKEROS=ubuntu
+  - APP=minimd DOCKEROS=ubuntu
+  - APP=miniqmc DOCKEROS=ubuntu
+  - APP=minismac2d DOCKEROS=ubuntu
+  - APP=minixyce DOCKEROS=ubuntu
+  - APP=nut DOCKEROS=ubuntu
+  - APP=openmc DOCKEROS=ubuntu
+  - APP=pathfinder DOCKEROS=ubuntu
+  - APP=pennant DOCKEROS=ubuntu
+  - APP=rsbench DOCKEROS=ubuntu
+  - APP=simplemoc DOCKEROS=ubuntu
+  - APP=snap DOCKEROS=ubuntu
+  - APP=snbone DOCKEROS=ubuntu
+  - APP=tealeaf DOCKEROS=ubuntu
   - APP=amg DOCKEROS=fedora
   - APP=candle-benchmarks DEPS="python" DOCKEROS=fedora
   - APP=examinimd DOCKEROS=fedora
