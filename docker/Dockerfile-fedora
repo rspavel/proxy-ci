@@ -22,5 +22,5 @@ RUN cp proxy-ci/fedora-packages.yaml spack/etc/spack/packages.yaml
 ENV SPACK=/home/ci/spack/bin/spack
 ENV SPACK_ROOT=/home/ci/spack
 
-RUN if [ -n "${DEPS}" ]; then /bin/bash -c 'source ${SPACK_ROOT}/share/spack/setup-env.sh; ${SPACK} install -j4 -v ${DEPS}'; else /bin/bash -c 'source ${SPACK_ROOT}/share/spack/setup-env.sh; ${SPACK} install -j4 -v --only dependencies ${APP}'; fi
+RUN if [ -n "${DEPS}" ]; then ${SPACK} install -j4 -v ${DEPS}; else ${SPACK} install -j4 -v --only dependencies ${APP}; fi
 RUN ${SPACK} ${INSECURE} install --source -j4 --only package -v ${APP}
