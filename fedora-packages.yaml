@@ -14,6 +14,10 @@ packages:
     buildable: False
     paths:
       perl@5.18.2: /usr
+  patch:
+    buildable: False
+    paths:
+      patch@2.7.6: /usr
   openmpi:
     buildable: False
     paths:
