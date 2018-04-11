@@ -30,3 +30,7 @@ packages:
     buildable: False
     paths:
       automake@1.13.4: /usr
+  openmpi:
+    buildable: False
+    paths:
+      openmpi@3.0.1: /ompi/install
