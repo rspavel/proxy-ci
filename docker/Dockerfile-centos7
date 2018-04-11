@@ -1,4 +1,4 @@
-from rspavel:centos_ompi
+from rspavel/centos_ompi
 
 ARG APP
 ARG DEPS
