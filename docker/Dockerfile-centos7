@@ -7,8 +7,9 @@ ARG INSECURE
 RUN yum update -y
 RUN yum install -y centos-release-scl
 RUN yum --enablerepo=centos-sclo-rh-testing -y install devtoolset-7-gcc*
-RUN yum install -y make cmake git mercurial graphviz gnupg2 R perl perl-devel openmpi openmpi-devel
+RUN yum install -y make cmake git mercurial graphviz gnupg2 R perl perl-devel
 RUN yum install -y patch bzip2* unzip*
+
 RUN ln -s /usr/include/openmpi-x86_64 /usr/lib64/openmpi/include
 
 RUN useradd -m ci
@@ -27,6 +28,7 @@ ENV SPACK=/home/ci/spack/bin/spack
 ENV SPACK_ROOT=/home/ci/spack
 
 RUN scl enable devtoolset-7 '${SPACK} compiler find'
+
 
 RUN if [ -n "${DEPS}" ]; then ${SPACK} -d install -j4 -v ${DEPS}; else ${SPACK} -d install -j4 -v --only dependencies ${APP}; fi
 RUN ${SPACK} ${INSECURE} install --source -j4 --only package -v ${APP}
