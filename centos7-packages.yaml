@@ -26,3 +26,7 @@ packages:
     buildable: False
     paths:
       m4@1.4.16: /usr
+  automake:
+    buildable: False
+    paths:
+      automake@1.13.4: /usr

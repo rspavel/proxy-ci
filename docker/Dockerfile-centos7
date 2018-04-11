@@ -10,7 +10,7 @@ RUN yum --enablerepo=centos-sclo-rh-testing -y install devtoolset-7-gcc*
 RUN yum install -y make cmake git mercurial graphviz gnupg2 R perl perl-devel
 RUN yum install -y patch bzip2* unzip*
 RUN yum install -y perl-Data-Dumper
-RUN yum install -y autoconf
+RUN yum install -y  autoconf automake
 
 RUN useradd -m ci
 
