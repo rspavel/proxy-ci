@@ -14,22 +14,6 @@ packages:
     buildable: False
     paths:
       perl@5.18.2: /usr
-  xz:
-    buildable: False
-    paths:
-      xz@5.2.2: /usr
-  autoconf:
-    buildable: False
-    paths:
-      autoconf@2.69: /usr
-  m4:
-    buildable: False
-    paths:
-      m4@1.4.16: /usr
-  automake:
-    buildable: False
-    paths:
-      automake@1.13.4: /usr
   openmpi:
     buildable: False
     paths:
