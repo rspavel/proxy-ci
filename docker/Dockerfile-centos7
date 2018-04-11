@@ -10,8 +10,6 @@ RUN yum --enablerepo=centos-sclo-rh-testing -y install devtoolset-7-gcc*
 RUN yum install -y make cmake git mercurial graphviz gnupg2 R perl perl-devel
 RUN yum install -y patch bzip2* unzip*
 
-RUN ln -s /usr/include/openmpi-x86_64 /usr/lib64/openmpi/include
-
 RUN useradd -m ci
 
 COPY proxy-ci/ /home/ci/proxy-ci
