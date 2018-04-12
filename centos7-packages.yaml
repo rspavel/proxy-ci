@@ -2,10 +2,6 @@ packages:
   all:
     providers:
       mpi: [openmpi]
-  cmake:
-    buildable: False
-    paths:
-      cmake@3.5.1: /usr
   r:
     buildable: False
     paths:
