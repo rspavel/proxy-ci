@@ -14,3 +14,7 @@ packages:
     buildable: False
     paths:
       openmpi@3.0.1: /ompi/install
+  boost:
+    buildable: False
+    paths:
+      boost@1.67.0: /boost/install
