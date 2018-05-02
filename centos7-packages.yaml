@@ -22,3 +22,7 @@ packages:
     buildable: False
     paths:
       openblas0@.2.20: /openblas/install
+  fftw:
+    buildable: False
+    paths:
+      fftw@3.3.7: /fftw/install
