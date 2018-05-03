@@ -3,6 +3,7 @@ packages:
     providers:
       mpi: [openmpi]
       blas: [openblas]
+      lapack: [openblas]
   r:
     buildable: False
     paths:
