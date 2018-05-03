@@ -1,4 +1,5 @@
 from rspavel/centos_ompi:latest
+# from proxyapps/proxy-ci-basecontainers:centos7
 
 ARG APP
 ARG DEPS
