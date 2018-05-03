@@ -32,6 +32,6 @@ ENV SPACK_ROOT=/home/ci/spack
 
 RUN scl enable devtoolset-7 '${SPACK} compiler find'
 
-
+RUN ${SPACK} find
 RUN if [ -n "${DEPS}" ]; then ${SPACK} install -j4 -v ${DEPS}; else ${SPACK} install -j4 -v --only dependencies ${APP}; fi
 RUN ${SPACK} -d  ${INSECURE} install --source -j4 --only package -v ${APP}
