@@ -22,3 +22,7 @@ packages:
     buildable: False
     paths:
       openblas@0.2.18: /usr
+  ffmpeg:
+    buildable: False
+    paths:
+        ffmpeg@2.8.15: /ffmpeg

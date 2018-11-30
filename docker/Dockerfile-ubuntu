@@ -9,6 +9,13 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get -q update -y
 RUN apt-get -qq install -y make cmake git g++ gfortran mercurial graphviz gnupg2 r-base r-base-core r-base-dev perl perl-base libopenmpi-dev
 RUN apt-get -qq install -y libopenblas-dev
+RUN apt-get -qq install -y ffmpeg libavcodec-dev libavdevice-dev libavfilter-dev  libavformat-dev  libavutil-dev  libswresample-dev  libswscale-dev
+
+RUN mkdir /ffmpeg
+RUN ln -s /usr/bin /ffmpeg/bin
+RUN ln -s /usr/share /ffmpeg/share
+RUN ln -s /usr/include/x86_64-linux-gnu /ffmpeg/include
+RUN ln -s /usr/lib/x86_64-linux-gnu /ffmpeg/lib
 
 RUN useradd -m ci
 
