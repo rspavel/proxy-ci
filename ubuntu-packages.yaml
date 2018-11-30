@@ -26,3 +26,7 @@ packages:
     buildable: False
     paths:
         ffmpeg@2.8.15: /ffmpeg
+  opengl:
+    buildable: False
+    paths:
+        opengl@system: /usr

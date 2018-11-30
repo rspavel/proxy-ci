@@ -10,6 +10,7 @@ RUN apt-get -q update -y
 RUN apt-get -qq install -y make cmake git g++ gfortran mercurial graphviz gnupg2 r-base r-base-core r-base-dev perl perl-base libopenmpi-dev
 RUN apt-get -qq install -y libopenblas-dev
 RUN apt-get -qq install -y ffmpeg libavcodec-dev libavdevice-dev libavfilter-dev  libavformat-dev  libavutil-dev  libswresample-dev  libswscale-dev
+RUN apt-get -qq install -y libegl1-mesa-dev
 
 RUN mkdir /ffmpeg
 RUN ln -s /usr/bin /ffmpeg/bin
