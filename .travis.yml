@@ -8,7 +8,7 @@ services:
 env:
   matrix:
   - APP=amg DOCKEROS=ubuntu
-  - APP="candle-benchmarks ^libjpeg ^opencv~vtk" DEPS="python@2.7.15" DOCKEROS=ubuntu
+  - APP="candle-benchmarks ^libjpeg ^opencv~vtk" DEPS="python@2.7.15" VERBOSE="-v" DOCKEROS=ubuntu
   - APP=examinimd DOCKEROS=ubuntu
   - APP=laghos DOCKEROS=ubuntu VERBOSE="-v"
   - APP=macsio DOCKEROS=ubuntu
